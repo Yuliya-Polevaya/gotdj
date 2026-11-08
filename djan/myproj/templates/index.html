@@ -1,0 +1,174 @@
+
+{% extends 'basa.html' %}
+{% load static %}
+
+{% block index %}
+
+<section class="welcome-block">
+    <div class="welcome-content">
+        <p class="welcome-subtitle">СТИЛЬ НАЧИНАЕТСЯ С ДЕТАЛЕЙ</p>
+        <h1>Добро пожаловать в наш магазин!</h1>
+        <p>
+            Мы помогаем находить обувь, в которой сочетаются
+            комфорт, качество и современный стиль.
+            Выбирайте модели для повседневной жизни,
+            прогулок и особенных случаев.
+        </p>
+
+        <a href="{% url 'prod' %}" class="main-button">
+            Перейти в каталог
+        </a>
+    </div>
+
+    <div class="welcome-image">
+        <img src="{% static 'img/shoes-main.jpg' %}" alt="Коллекция обуви">
+    </div>
+</section>
+
+
+<section class="advantages-section">
+    <h2>Почему выбирают нас?</h2>
+    <p class="section-description">
+        Мы стремимся сделать выбор обуви простым и приятным.
+    </p>
+
+    <div class="advantages-grid">
+
+        <div class="advantage-card">
+            <div class="advantage-icon">✦</div>
+            <h3>Качество</h3>
+            <p>Внимание к материалам и каждой детали обуви.</p>
+        </div>
+
+        <div class="advantage-card">
+            <div class="advantage-icon">♡</div>
+            <h3>Комфорт</h3>
+            <p>Модели для удобства в повседневной жизни.</p>
+        </div>
+
+        <div class="advantage-card">
+            <div class="advantage-icon">✧</div>
+            <h3>Стиль</h3>
+            <p>Разнообразие моделей для разных вкусов.</p>
+        </div>
+
+        <div class="advantage-card">
+            <div class="advantage-icon">✓</div>
+            <h3>Выбор</h3>
+            <p>Разные категории обуви в одном каталоге.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="categories-section">
+    <h2>Наш ассортимент</h2>
+    <p class="section-description">
+        Найдите подходящую обувь для любого случая.
+    </p>
+
+    <div class="home-category-grid">
+
+        <a href="{% url 'category' pk=1 %}" class="home-category-card">
+            <img src="{% static 'img/mokasiny.jpg' %}" alt="Мокасины">
+            <h3>Мокасины</h3>
+            <p>Удобство и практичность на каждый день.</p>
+        </a>
+
+        <a href="{% url 'category' pk=2 %}" class="home-category-card">
+            <img src="{% static 'img/kedy.jpg' %}" alt="Кеды">
+            <h3>Кеды</h3>
+            <p>Лёгкая обувь для прогулок и активного отдыха.</p>
+        </a>
+
+        <a href="{% url 'category' pk=3 %}" class="home-category-card">
+            <img src="{% static 'img/tapochki.jpg' %}" alt="Тапочки">
+            <h3>Тапочки</h3>
+            <p>Домашний уют и комфорт.</p>
+        </a>
+
+        <a href="{% url 'category' pk=4 %}" class="home-category-card">
+            <img src="{% static 'img/baletki.jpg' %}" alt="Балетки">
+            <h3>Балетки</h3>
+            <p>Лёгкость и элегантность в каждом шаге.</p>
+        </a>
+
+        <a href="{% url 'category' pk=5 %}" class="home-category-card">
+            <img src="{% static 'img/polubotinki.jpg' %}" alt="Полуботинки">
+            <h3>Полуботинки</h3>
+            <p>Практичная обувь для прохладной погоды.</p>
+        </a>
+
+    </div>
+
+    <a href="{% url 'prod' %}" class="catalog-link">
+        Посмотреть весь каталог →
+    </a>
+</section>
+
+
+<section class="about-preview">
+    <div>
+        <h2>Обувь для каждого дня</h2>
+        <p>
+            Наш интернет-магазин создан для тех, кто ценит
+            удобство, качество и привлекательный внешний вид.
+            Здесь вы можете познакомиться с ассортиментом,
+            узнать больше о товарах и выбрать подходящую модель.
+        </p>
+    </div>
+</section>
+
+
+<section class="home-links-section">
+    <h2>Узнайте о нас больше</h2>
+    <p class="section-description">
+        Следите за новостями и знакомьтесь с нашей историей.
+    </p>
+
+    <div class="home-links-grid">
+
+        <a href="{% url 'news' %}" class="home-link-card">
+            <span>01</span>
+            <h3>Новости</h3>
+            <p>Узнавайте о последних событиях и обновлениях магазина.</p>
+            <b>Подробнее →</b>
+        </a>
+
+        <a href="{% url 'blog' %}" class="home-link-card">
+            <span>02</span>
+            <h3>Наш блог</h3>
+            <p>Читайте интересные статьи об обуви, стиле и уходе.</p>
+            <b>Читать блог →</b>
+        </a>
+
+        <a href="{% url 'onas' %}" class="home-link-card">
+            <span>03</span>
+            <h3>О нас</h3>
+            <p>Познакомьтесь с нашим магазином и его особенностями.</p>
+            <b>Открыть →</b>
+        </a>
+
+        <a href="{% url 'form' %}" class="home-link-card">
+            <span>04</span>
+            <h3>Связаться с нами</h3>
+            <p>Оставьте свои данные, чтобы отправить нам сообщение.</p>
+            <b>Связаться →</b>
+        </a>
+
+    </div>
+</section>
+
+
+<section class="final-banner">
+    <h2>Найдите свою идеальную пару!</h2>
+    <p>Откройте каталог и выберите обувь, которая подходит именно вам.</p>
+    <a href="{% url 'prod' %}" class="main-button">
+        Смотреть товары
+    </a>
+</section>
+
+{% endblock index %}
+
+

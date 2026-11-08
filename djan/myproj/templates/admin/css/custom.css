@@ -1,0 +1,275 @@
+:root,
+html[data-theme="light"] {
+    /* Основная палитра */
+    --primary: #d6336c;            /* насыщенный розовый — шапка, заголовки */
+    --secondary: #f06595;          /* средний розовый — капшены, подзаголовки */
+    --accent: #ff8fab;             /* светлый акцент — hover, ссылки */
+
+    /* Текст и фоны */
+    --body-fg: #3b1f2b;            /* тёмно-бордовый текст */
+    --body-bg: #fff5f8;            /* нежно-розовый фон страницы */
+    --body-quiet-color: #a15c78;
+
+    /* Шапка */
+    --header-color: #ffffff;
+    --header-bg: #d6336c;
+    --header-link-color: #ffffff;
+
+    /* Хлебные крошки */
+    --breadcrumbs-fg: #ffffff;
+    --breadcrumbs-bg: #f06595;
+    --breadcrumbs-link-fg: #ffffff;
+
+    /* Ссылки */
+    --link-fg: #c2255c;
+    --link-hover-color: #ff8fab;
+    --link-selected-fg: #d6336c;
+
+    /* Кнопки */
+    --button-bg: #f06595;
+    --button-fg: #ffffff;
+    --button-hover-bg: #d6336c;
+    --default-button-bg: #d6336c;
+    --default-button-hover-bg: #a61e4d;
+
+    /* Модули и таблицы */
+    --module-bg: #ffffff;
+    --darkened-bg: #ffe3ec;
+    --selected-bg: #ffd6e3;
+    --selected-row: #ffe8f0;
+
+    /* Границы */
+    --border-color: #f8c8dc;
+
+    /* Поля ввода */
+    --input-bg: #ffffff;
+    --input-fg: #3b1f2b;
+    --input-border-color: #f3b6cc;
+
+    /* Сообщения */
+    --message-success-bg: #ffe3ec;
+    --message-warning-bg: #ffe8d6;
+    --message-error-bg: #ffd6d6;
+}
+
+/* ===== Тёмная розовая тема ===== */
+html[data-theme="dark"] {
+    --primary: #f06595;
+    --secondary: #d6336c;
+    --accent: #ff8fab;
+
+    --body-bg: #1a0f14;
+    --body-fg: #f5dbe5;
+    --body-quiet-color: #c99bae;
+
+    --header-bg: #2a1520;
+    --header-color: #ffd6e3;
+    --header-link-color: #ffd6e3;
+
+    --breadcrumbs-bg: #3a1c2b;
+    --breadcrumbs-fg: #ffd6e3;
+
+    --link-fg: #ff8fab;
+    --link-hover-color: #ffc2d4;
+
+    --button-bg: #d6336c;
+    --button-hover-bg: #f06595;
+    --default-button-bg: #f06595;
+
+    --module-bg: #241219;
+    --darkened-bg: #2e1620;
+    --selected-bg: #3a1c2b;
+
+    --border-color: #4a2436;
+    --input-bg: #1a0f14;
+    --input-fg: #f5dbe5;
+    --input-border-color: #4a2436;
+}
+
+/* ============================================================
+   Косметика
+   ============================================================ */
+
+/* Шапка с мягкой тенью */
+#header {
+    background: linear-gradient(90deg, #d6336c 0%, #f06595 100%);
+    box-shadow: 0 2px 10px rgba(214, 51, 108, 0.25);
+}
+
+#branding h1,
+#branding h1 a:link,
+#branding h1 a:visited {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* Ссылки в шапке */
+#user-tools a,
+#user-tools a:link,
+#user-tools a:visited {
+    color: #ffe3ec;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+#user-tools a:hover {
+    color: #ffffff;
+    border-bottom-color: #ff8fab;
+}
+
+/* Хлебные крошки */
+div.breadcrumbs {
+    background: #f06595;
+    color: #ffffff;
+}
+div.breadcrumbs a {
+    color: #ffe3ec;
+}
+div.breadcrumbs a:hover {
+    color: #ffffff;
+}
+
+/* Модули */
+.module {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(214, 51, 108, 0.08);
+    background: #ffffff;
+    border: 1px solid #f8c8dc;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    background: linear-gradient(90deg, #d6336c, #f06595);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Кнопки */
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input,
+a.button {
+    background: #f06595;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.button:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+a.button:hover {
+    background: #d6336c;
+}
+
+.button:active,
+input[type=submit]:active {
+    transform: scale(0.98);
+}
+
+/* Главная кнопка «Сохранить» */
+.submit-row input.default,
+.button.default {
+    background: #d6336c;
+}
+.submit-row input.default:hover,
+.button.default:hover {
+    background: #a61e4d;
+}
+
+/* Ссылки «Удалить» / «История» */
+.submit-row a.deletelink {
+    background: #ff8fab;
+    border-radius: 8px;
+    padding: 9px 18px;
+    color: #ffffff;
+}
+.submit-row a.deletelink:hover {
+    background: #f06595;
+}
+
+/* Строки таблиц */
+#result_list tbody tr:hover {
+    background: #fff0f5;
+}
+
+#result_list thead th {
+    background: #ffe3ec;
+    color: #8a1f47;
+    font-weight: 600;
+}
+
+#result_list thead th a {
+    color: #8a1f47;
+}
+#result_list thead th a:hover {
+    color: #d6336c;
+}
+
+/* Поля ввода */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number],
+input[type=tel],
+textarea,
+select,
+.vTextField {
+    border: 1px solid #f3b6cc;
+    border-radius: 6px;
+    background: #ffffff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+textarea:focus,
+select:focus,
+.vTextField:focus {
+    border-color: #f06595;
+    box-shadow: 0 0 0 3px rgba(240, 101, 149, 0.15);
+    outline: none;
+}
+
+/* Заголовок «Site administration» */
+#content h1 {
+    color: #8a1f47;
+    font-weight: 700;
+}
+
+/* Кнопка «Добавить» (+) в списках */
+.object-tools a.addlink {
+    background: #f06595;
+    border-radius: 20px;
+    padding: 8px 18px;
+    color: #fff;
+}
+.object-tools a.addlink:hover {
+    background: #d6336c;
+}
+
+/* Сообщения */
+.messagelist li.success {
+    background: #ffe3ec;
+    border-left: 4px solid #d6336c;
+    color: #8a1f47;
+}
+.messagelist li.warning {
+    background: #ffe8d6;
+    border-left: 4px solid #f06595;
+}
+
+/* Иконки действий */
+.actions {
+    background: #ffe3ec;
+    border-radius: 8px;
+}

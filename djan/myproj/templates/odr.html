@@ -1,0 +1,9 @@
+{% extends 'basa.html' %}
+{% block odr %}
+    <a href="{% url 'form' %}">назад</a>
+    <p>Имя: {{ name }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Ответ: {{ answer }}</p>
+    <p>Сайт: {{ site }}</p>
+    <p>Возраст: {{ age }}</p>
+{% endblock odr %}

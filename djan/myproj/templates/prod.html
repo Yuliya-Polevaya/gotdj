@@ -1,0 +1,71 @@
+{% extends 'basa.html' %}
+{% load static %}
+
+{% block prod %}
+
+<section class="catalog-heading">
+    <p class="catalog-subtitle">НАША КОЛЛЕКЦИЯ</p>
+    <h1>Каталог обуви</h1>
+    <p>Выбирайте подходящую обувь для себя.</p>
+</section>
+
+<section class="catalog">
+
+    <div class="category-filters">
+        <button class="filter-button active" data-category="all">
+            Все товары
+        </button>
+
+        {% for cat in category %}
+            <button class="filter-button" data-category="{{ cat.id }}">
+                {{ cat.title }}
+            </button>
+        {% endfor %}
+    </div>
+
+    <p class="catalog-count">
+        Найдено товаров: <span id="product-count">{{ product|length }}</span>
+    </p>
+
+    <div class="products-grid" id="products-grid">
+
+        {% for p in product %}
+            <article class="catalog-card" data-category="{{ p.cat_id_id }}">
+
+                <div class="catalog-card-top">
+                    <span class="catalog-icon">👟</span>
+                    <span class="catalog-label">{{ p.cat_id.title }}</span>
+                </div>
+
+                <div class="catalog-card-content">
+                    <h2>{{ p.name }}</h2>
+
+                    <div class="catalog-details">
+                        <p><span>Материал:</span> {{ p.material }}</p>
+                        <p><span>Дата производства:</span> {{ p.date_prod|date:"d.m.Y" }}</p>
+                        <p><span>Количество:</span> {{ p.counter }} шт.</p>
+                    </div>
+
+                    <div class="catalog-card-bottom">
+                        <span class="catalog-price">{{ p.sale }} ₽</span>
+                        <span class="catalog-available">В каталоге</span>
+                    </div>
+                </div>
+
+            </article>
+        {% empty %}
+            <p class="catalog-empty">Товаров пока нет.</p>
+        {% endfor %}
+
+    </div>
+
+    <div class="no-products" id="no-products" hidden>
+        <h2>В этой категории пока нет товаров</h2>
+        <p>Выберите другую категорию.</p>
+    </div>
+
+</section>
+
+<script src="{% static 'js/products.js' %}"></script>
+
+{% endblock prod %}

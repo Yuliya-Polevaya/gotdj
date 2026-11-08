@@ -1,0 +1,88 @@
+
+{% extends 'basa.html' %}
+
+{% block form %}
+
+<section class="contact-heading">
+    <p class="contact-subtitle">МЫ ВСЕГДА НА СВЯЗИ</p>
+    <h1>Свяжитесь с нами</h1>
+    <p>
+        Остались вопросы или хотите поделиться своим мнением?
+        Напишите нам, и мы обязательно рассмотрим ваше обращение.
+    </p>
+</section>
+
+<section class="contact-container">
+
+    <div class="contact-info">
+        <h2>Будем рады вашему сообщению!</h2>
+        <p>
+            Мы ценим каждого посетителя нашего магазина.
+            Если вам нужна помощь с выбором обуви или есть предложения
+            по улучшению нашего сайта, заполните форму обратной связи.
+        </p>
+
+        <div class="contact-item">
+            <span>✉</span>
+            <div>
+                <h3>Электронная почта</h3>
+                <p>support@shoestore.ru</p>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <span>♡</span>
+            <div>
+                <h3>Поддержка клиентов</h3>
+                <p>Поможем ответить на ваши вопросы.</p>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <span>✦</span>
+            <div>
+                <h3>Ваше мнение важно</h3>
+                <p>Мы всегда открыты к предложениям и отзывам.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h2>Напишите нам</h2>
+        <p class="contact-description">
+            Заполните небольшую форму ниже.
+        </p>
+
+        <form method="post" action="{% url 'odr' %}" id="form" name="form">
+            {% csrf_token %}
+
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Введите ваше имя" value="{{ name }}" required>
+
+            <label for="email">Ваш email</label>
+            <input type="email" id="email" name="email"
+                   placeholder="example@mail.ru" value="{{ email }}" required>
+
+            <label for="answer">Оцените наш сайт</label>
+            <select id="answer" name="answer">
+                <option value="1">Пока не определился</option>
+                <option value="2">Мне всё нравится</option>
+                <option value="3">Есть замечания</option>
+            </select>
+
+            <label for="site">Ссылка на ваш сайт (необязательно)</label>
+            <input type="url" id="site" name="site"
+                   placeholder="https://example.com">
+
+            <label for="age">Ваш возраст</label>
+            <input type="number" id="age" name="age"
+                   placeholder="Введите возраст" min="1" max="120">
+
+            <button type="submit">Отправить сообщение</button>
+        </form>
+    </div>
+
+</section>
+
+{% endblock form %}
